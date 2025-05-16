@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ശ്രീ തെക്കുംകോണം മാടൻകാവ് ഭദ്രാഭഗവതി ക്ഷേത്രം</title>
+    <link rel="icon" type="image/png" href="web.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans Malayalam", sans-serif;
+      }
+
+      body {
+        background-color: #fff8f0;
+        color: #400000;
+      }
+
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #992829, #c99a2e);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      #loader img {
+        width: 80%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 20px;
+        animation: pulse 2s infinite;
+      }
+
+      /* Optional Animation for loader image */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .progress-bar {
+        width: 400px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ffd700, #ffffff);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
+      .loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #992829, #c99a2e);
+        padding: 25px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffffff20" d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z"/></svg>')
+          center/100px 100px;
+        opacity: 0.3;
+        animation: templePattern 60s linear infinite;
+      }
+
+      @keyframes templePattern {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 1000px 1000px;
+        }
+      }
+
+      .shiny-glow-text {
+        font-size: 2.5em;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffcc00, 0 0 20px #ffaa00,
+          0 0 30px #ff8800;
+        animation: divineGlow 4s ease-in-out infinite alternate;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+
+      @keyframes divineGlow {
+        0% {
+          text-shadow: 0 0 5px #ffd700, 0 0 10px #ffcc00, 0 0 20px #ffaa00,
+            0 0 30px #ff8800;
+          transform: translateY(0) rotateX(0deg);
+        }
+        50% {
+          text-shadow: 0 0 10px #ffd700, 0 0 20px #ffcc00, 0 0 30px #ffaa00,
+            0 0 40px #ff8800;
+          transform: translateY(-5px) rotateX(5deg);
+        }
+        100% {
+          text-shadow: 0 0 15px #ffd700, 0 0 25px #ffcc00, 0 0 35px #ffaa00,
+            0 0 45px #ff8800;
+          transform: translateY(0) rotateX(0deg);
+        }
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #ffd966;
+      }
+
+      nav a {
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #4a2e00;
+        font-weight: bold;
+        white-space: nowrap;
+        transition: all 0.5s ease-in-out;
+      }
+
+      nav a:hover {
+        background-color: #fff2a8;
+        border-radius: 5px;
+        transform: scale(1.1);
+        color: rgb(45, 7, 196);
+      }
+
+      section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .carousel-container {
+        max-width: 750px; 
+        margin: 0px auto; 
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        overflow-x: auto;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #800000;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        color: #800000;
+      }
+
+      .poojari-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .poojari-card {
+        flex: 1 1 calc(50% - 20px);
+        background: #fff0e0;
+        border: 2px solid #800000;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .poojari-card img {
+        width: 160px;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav a {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 12px;
+        }
+
+        .shiny-glow-text {
+          font-size: 1.6em;
+        }
+
+        section {
+          padding: 30px 15px;
+        }
+
+        .poojari-card {
+          flex: 1 1 100%;
+        }
+
+        table,
+        th,
+        td {
+          font-size: 14px;
+        }
+
+        #home {
+          height: auto;
+          min-height: 40vh;
+          background-size: contain;
+        }
+      }
+
+      .rainbow-move {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        background: linear-gradient(
+          90deg,
+          red,
+          orange,
+          green,
+          blue,
+          indigo,
+          red
+        );
+        background-size: 400% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: rainbow-move 3s linear infinite,
+          shine 1.5s ease-in-out infinite alternate;
+      }
+
+      /* Rainbow color sliding animation */
+      @keyframes rainbow-move {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Shining glow effect */
+      @keyframes shine {
+        from {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        to {
+          text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-content">
+        <img src="load.png" alt="Loading..." />
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <header id="header">
+      <h1 class="shiny-glow-text">
+        ശ്രീ തെക്കുംകോണം മാടൻകാവ് ഭദ്രാഭഗവതി ക്ഷേത്രം
+      </h1>
+    </header>
+
+    <nav>
+      <a href="#header">പ്രധാന പേജ്</a>
+      <a href="#rituals">ദൈനംദിന പൂജാനുഷ്ഠാനങ്ങൾ</a>
+      <a href="#poojari">ആചാര്യന്മാർ</a>
+      <a href="#pooja">പൂജാ വിവരങ്ങൾ</a>
+    </nav>
+
+    <div class="carousel-container">
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="home01.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="home02.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- <section id="origin">
+      <h2>ആരംഭവും ചരിത്രവും</h2>
+      <p>
+        ശ്രീ ഭദ്രാഭഗവതി ദേവിയുടെ മഹത്വം കൊണ്ടാണ് ഈ ക്ഷേത്രം കേരളത്തിൽ
+        പ്രശസ്തമായത്. ക്ഷേത്രത്തിന്റെ തുടങ്ങിയ ചരിത്രം ശതാബ്ദങ്ങൾക്കുമുമ്പാണ്.
+      </p>
+      <img
+        src="home1.png"
+        alt="Temple Image"
+        style="width: 100%; margin-top: 20px; border-radius: 8px"
+      />
+    </section> -->
+
+    <section id="rituals">
+      <h2>ദൈനംദിന പൂജാനുഷ്ഠാനങ്ങൾ</h2>
+      <table>
+        <tr>
+          <th>സമയം</th>
+          <th>പൂജാ</th>
+        </tr>
+        <tr>
+          <td>വൈകിട്ട് 5:00 ന്</td>
+          <td>നട തുറക്കൽ</td>
+        </tr>
+        <tr>
+          <td>വൈകിട്ട് 6:30 ന്</td>
+          <td>ദീപാരാധന</td>
+        </tr>
+        <tr>
+          <td>വൈകിട്ട് 7:15 ന്</td>
+          <td>നട അടക്കൽ</td>
+        </tr>
+      </table>
+      <br />
+      <p class="rainbow-move">
+        എല്ലാ മലയാള മാസം ഒന്നാം തീയതി രാവിലെ 6:00 നു നട തുറക്കുന്നതാണ്.
+      </p>
+    </section>
+
+    <section id="poojari">
+      <h2>ആചാര്യന്മാർ</h2>
+      <div class="poojari-container">
+        <div class="poojari-card">
+          <h3>ക്ഷേത്ര തന്ത്രി</h3>
+          <!-- <img src="home.png" alt="Poojari 1" /> -->
+          <p style="font-weight: bold; color:blueviolet;">
+            ശ്രീ. ബ്രഹ്മശ്രീ പട്ടാഴി കിഴക്കെഭാഗത്ത്മOo ഹരികൃഷ്ണൻ ഭട്ടതിരി
+          </p>
+        </div>
+        <div class="poojari-card">
+          <h3>ക്ഷേത്ര മേൽശാന്തി</h3>
+          <!-- <img src="home.png" alt="Poojari 2" /> -->
+          <p style="font-weight: bold; color:blueviolet;">ശ്രീ. പകൽക്കുറി കണ്ണൻ പോറ്റി</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pooja">
+      <h2>പൂജാ വിവരങ്ങൾ</h2>
+      <table>
+        <tr>
+          <th>ക്രമ സംഖ്യ</th>
+          <th>പൂജ</th>
+          <th>നിരക്ക്</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>നിത്യ വിളക്ക്</td>
+          <td>₹700</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>അർച്ചന</td>
+          <td>₹15</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>ചരടുജപം</td>
+          <td>₹20</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>കുടുംബാർച്ചന</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>രക്തപുഷ്പാഞ്ജലി</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>ഭാഗ്യസൂക്തം</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>കുങ്കുമാർച്ചന</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>കുങ്കുമാഭിക്ഷേകം (100 g)</td>
+          <td>₹100</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>പുരുഷസൂക്തം</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>ഐക്യസൂക്തർച്ചന</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>പിഴിഞ്ഞുപായസം</td>
+          <td>₹101</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>പായസം</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>കടുംപായസം</td>
+          <td>₹100</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>പാൽപ്പായസം (1 ലിറ്റർ)</td>
+          <td>₹100</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>നെയ്യ് വിളക്ക്</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>ഭഗവതിസേവ</td>
+          <td>₹500</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>ശത്രുസംഹാരർച്ചനാ</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>ഗുരുതിപൂജ</td>
+          <td>₹500</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>ശ്രീസൂക്തം</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>ഭദ്രകാളീ ഇഷ്ടസൂക്തം</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>ജലധാര</td>
+          <td>₹25</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>മൃതുഞ്ജയർച്ചന</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>കൂവളാർച്ചന</td>
+          <td>₹20</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>ആഘോര മന്ത്രാർച്ചന</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>നീരാഞ്ജനം</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>പടുക്ക സമർപ്പണം (സാധനം ഉൾപ്പടെ )</td>
+          <td>₹150</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>ഭസ്മാഭിക്ഷേകം</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>ആയില്യ പൂജ</td>
+          <td>₹40</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>നൂറും പാലും</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>മുഖച്ചാർത്ത്</td>
+          <td>₹150</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td>മുഴുക്കാപ്പ്</td>
+          <td>₹1000</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>സമൂഹഗണപതിഹോമം</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>33</td>
+          <td>പറയിടീൽ</td>
+          <td>₹150</td>
+        </tr>
+        <tr>
+          <td>34</td>
+          <td>മാലപൂജ</td>
+          <td>₹10</td>
+        </tr>
+        <tr>
+          <td>35</td>
+          <td>കെട്ടുനിറ</td>
+          <td>₹30</td>
+        </tr>
+        <tr>
+          <td>36</td>
+          <td>ചാവിപൂജ</td>
+          <td>₹50</td>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td>വാഹനപൂജ</td>
+          <td>₹101</td>
+        </tr>
+        <tr>
+          <td>38</td>
+          <td>സമർപ്പണം</td>
+          <td>₹20</td>
+        </tr>
+      </table>
+    </section>
+
+    <footer
+      style="
+        background: #4b2a16;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 1em;
+      "
+    >
+      <div style="max-width: 1000px; margin: auto">
+        <p style="margin-bottom: 15px; font-size: 1.1em">
+          ശ്രീ തെക്കുംകോണം മാടൻകാവ് ഭദ്രാഭഗവതി ക്ഷേത്രം
+        </p>
+        <p style="font-size: 0.9em">
+          മലയ്ക്കൽ പി ഓ, പനപ്പാംകുന്ന്, കിളിമാനൂർ, തിരുവനന്തപുരം, കേരളം
+        </p>
+        <hr style="border: 0; border-top: 2px solid #ffd700; margin: 20px 0" />
+        <p style="font-style: italic; font-size: 1.1em; color: #ffd700">
+          Sponsored and Developed by <strong>JS Engineering</strong>
+        </p>
+        <div style="margin-top: 10px">
+          <img
+            src="js logo.png"
+            alt="JS Engineering Logo"
+            style="height: 35px; margin-top: 10px"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const progress = document.getElementById("progress");
+        const loader = document.getElementById("loader");
+        const minLoadTime = 3000; // Minimum 3 seconds
+        const startTime = Date.now();
+
+        // Simulate progress
+        let width = 0;
+        const interval = setInterval(() => {
+          if (width >= 100) {
+            clearInterval(interval);
+            // Ensure minimum load time
+            const elapsed = Date.now() - startTime;
+            const remainingTime = Math.max(0, minLoadTime - elapsed);
+
+            setTimeout(() => {
+              loader.style.opacity = "0";
+              loader.style.transition = "opacity 0.5s ease";
+              setTimeout(() => {
+                loader.style.display = "none";
+              }, 500);
+            }, remainingTime);
+          } else {
+            width += Math.random() * 15;
+            if (width > 100) width = 100;
+            progress.style.width = width + "%";
+          }
+        }, 200);
+
+        // Fallback in case something goes wrong
+        setTimeout(() => {
+          if (loader.style.display !== "none") {
+            progress.style.width = "100%";
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+            }, 500);
+          }
+        }, 6000); // Maximum 6 seconds
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
